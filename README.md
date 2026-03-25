@@ -17,55 +17,6 @@ npm install
 npm run dev
 ```
 
----
-
-## Déploiement — Surge.sh
-
-```bash
-npm run build
-npx surge dist
-```
-
-Pour toujours déployer sur le même domaine :
-```bash
-npx surge dist mon-domaine.surge.sh
-```
-
----
-
-## Déploiement — GitHub Pages
-
-1. Push sur GitHub :
-```bash
-git init && git add . && git commit -m "init"
-git remote add origin https://github.com/TON_USER/TON_REPO.git
-git push -u origin main
-```
-
-2. Installe gh-pages :
-```bash
-npm install --save-dev gh-pages
-```
-
-3. Ajoute dans `package.json` > `scripts` :
-```json
-"deploy": "npm run build && npx gh-pages -d dist"
-```
-
-4. Déploie :
-```bash
-npm run deploy
-```
-
-5. GitHub repo Settings → Pages → Source: `gh-pages` branch
-
-> ⚠️ Si ton repo ne s'appelle pas `username.github.io`, change dans `vite.config.js` :
-> ```js
-> base: '/nom-du-repo/'
-> ```
-
----
-
 ## Structure
 
 ```
