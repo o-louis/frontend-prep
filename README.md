@@ -1,16 +1,16 @@
 # ⚡ Frontend Interview Prep
 
-SPA Vue 3 + Vite pour réviser CSS, JavaScript et Vue avant un entretien frontend.
-Disponible en **français** et **anglais**.
+Vue 3 + Vite SPA to review CSS, JavaScript and Vue before a frontend interview.
+Available in **French** and **English**.
 
 ## Stack
 - Vue 3 (Composition API + `<script setup>`)
 - Vite
-- Aucune dépendance externe
+- No external dependencies
 
 ---
 
-## Dev local
+## Local Dev
 
 ```bash
 npm install
@@ -21,27 +21,27 @@ npm run dev
 
 ```
 src/
-  App.vue              # Racine (tabs, header, lang toggle)
+  App.vue              # Root (tabs, header, lang toggle)
   main.js
   components/
-    TopicCard.vue      # Carte dépliable
+    TopicCard.vue      # Collapsible card
   composables/
-    useLang.js         # Gestion FR/EN
+    useLang.js         # FR/EN management
   data/
-    topics.js          # Tout le contenu en FR + EN
+    topics.js          # All content in FR + EN
 ```
 
-## Ajouter un sujet
+## Adding a topic
 
-Dans `src/data/topics.js`, dans la bonne section :
+In `src/data/topics.js`, under the relevant section:
 ```js
 {
-  id: 'js-mon-sujet',
+  id: 'js-my-topic',
   icon: '🆕',
-  name: 'Mon sujet',
+  name: 'My topic',
   hot: true,
-  explanation: 'Explication en <strong>HTML</strong>.',
+  explanation: 'Explanation in <strong>HTML</strong>.',
   code: `const x = 1;`,
-  tip: 'Tip entretien.'
+  tip: 'Interview tip.'
 }
 ```
