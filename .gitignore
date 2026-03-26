@@ -1,1 +1,5 @@
-dist/
+# Build
+/dist
+
+# Depencencies
+node_modules
