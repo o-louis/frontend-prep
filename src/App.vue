@@ -7,12 +7,13 @@
           <span class="header-logo">⚡</span>
           <div>
             <h1 class="header-title">{{ t.title }}</h1>
-            <p class="header-sub">{{ t.subtitle }}</p>
           </div>
         </div>
-        <button class="lang-toggle" @click="toggle" :title="lang === 'fr' ? 'Switch to English' : 'Passer en français'">
-          <span class="lang-flag">{{ lang === 'fr' ? '🇫🇷' : '🇬🇧' }}</span>
-          <span class="lang-text">{{ lang === 'fr' ? 'FR' : 'EN' }}</span>
+        <button class="lang-toggle" @click="toggle" :title="lang === FR ? 'Switch to English' : 'Passer en français'">
+          <span class="lang-flag">
+            <FlagIcon :code="lang" />
+          </span>
+          <span class="lang-text">{{ lang === FR ? 'FR' : 'EN' }}</span>
         </button>
       </div>
     </header>
@@ -53,7 +54,7 @@
     </main>
 
     <footer class="footer">
-      <span>{{ lang === 'fr' ? 'Bonne chance pour tes entretiens 🚀' : 'Good luck with your interviews 🚀' }}</span>
+      <span>{{ lang === FR ? 'Bonne chance pour tes entretiens 🚀' : 'Good luck with your interviews 🚀' }}</span>
     </footer>
   </div>
 </template>
@@ -61,10 +62,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { topics } from './data/topics.js'
-import { useLang } from './composables/useLang.js'
+import { useLang, LANG_FR } from './composables/useLang.js'
 import TopicCard from './components/TopicCard.vue'
+import FlagIcon from './components/FlagIcon.vue'
 
 const { lang, toggle, t } = useLang()
+const FR = LANG_FR
 
 const activeTab = ref('css')
 
@@ -143,7 +146,7 @@ html, body {
 
 /* === Header === */
 .header {
-  padding: 28px 0 20px;
+  padding: 18px 0 10px;
   position: sticky;
   top: 0;
   background: var(--bg);
@@ -198,7 +201,7 @@ html, body {
   border-color: var(--accent);
   color: var(--accent-soft);
 }
-.lang-flag { font-size: 1rem; }
+.lang-flag { display: flex; align-items: center; border-radius: 2px; overflow: hidden; }
 
 /* === Tabs === */
 .tabs {
