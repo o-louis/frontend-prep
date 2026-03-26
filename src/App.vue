@@ -134,6 +134,7 @@ html, body {
 <style scoped>
 /* === App Layout === */
 .app {
+  width: 100%;
   max-width: 700px;
   margin: 0 auto;
   padding: 0 16px 60px;
