@@ -95,6 +95,7 @@ function toggle() { isOpen.value = !isOpen.value }
 .topic-content {
   padding: 4px 14px 14px;
   border-top: 1px solid var(--border);
+  text-align: left;
 }
 
 .explanation {
@@ -129,7 +130,8 @@ function toggle() { isOpen.value = !isOpen.value }
   line-height: 1.65;
   overflow-x: auto;
   white-space: pre;
-  color: var(--text-secondary);
+  color: var(--accent-soft);
+  text-align: left;
 }
 .code-block code { font-family: inherit; }
 
